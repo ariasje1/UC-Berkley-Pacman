@@ -3,11 +3,7 @@ Pac-Man AI Search
 
 This project is based on the Pac-Man projects developed at the University of California, Berkeley. The project uses the Pac-Man environment to teach foundational artificial intelligence concepts, particularly state-space search.
 
-The goal of this assignment is to implement several search algorithms and apply them to navigating Pac-Man through different maze environments.
-
-Project Goals
-
-The project focuses on implementing:
+The
 
 Depth-First Search (DFS)
 
