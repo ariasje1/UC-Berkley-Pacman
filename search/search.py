@@ -90,31 +90,21 @@ def depthFirstSearch(problem: SearchProblem) -> List[Directions]:
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
     """
     "*** YOUR CODE HERE ***"
+def depthFirstSearch(problem):
     stack = util.Stack()
     visited = set()
-
-    # (state, path_to_state)
-    start = problem.getStartState()
-    stack.push((start, []))
+    stack.push((problem.getStartState(), []))      # (state, actions to get here)
 
     while not stack.isEmpty():
         state, path = stack.pop()
-
-        # Don't expand states we've already visited
-        if state in visited:
+        if state in visited:                       # already expanded
             continue
-
-        # Goal reached
-        if problem.isGoalState(state):
+        if problem.isGoalState(state):             # goal test on pop, not on push
             return path
-
         visited.add(state)
-
-        # Add successors to the stack
-        for successor, action, stepCost in problem.getSuccessors(state):
+        for successor, action, cost in problem.getSuccessors(state):
             if successor not in visited:
                 stack.push((successor, path + [action]))
-
     return []
 
 def breadthFirstSearch(problem: SearchProblem) -> List[Directions]:
